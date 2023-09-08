@@ -41,7 +41,7 @@ void print_mat(char** mat,int c, int l){
         for (int j = 0; j < c; ++j) {
             printf("%c",mat[j][i]);
         }
-        printf("\n");
+        printf("\n\n");
     }
 }
 
@@ -76,8 +76,8 @@ void horizontal_direita(char** mat, int c_inicial,int l_inicial,char const strin
     if (string[i]!=mat[c_inicial+i][l_inicial]){
         return;
     }else if(limite==2 && string[i]==mat[c_inicial+i][l_inicial]){
-        printf("Palavra %s ocorre na horizontal, iniciando na\n"
-               "posicao [%d,%d] e terminando na posicao [%d,%d]\n",string,c_inicial+1,l_inicial+1,c_inicial+i+1,l_inicial+1);
+        printf("\nPalavra %s ocorre na horizontal, iniciando na\n"
+               "posicao [%d,%d] e terminando na posicao [%d,%d]\n\n",string,c_inicial+1,l_inicial+1,c_inicial+i+1,l_inicial+1);
         return;
     }else{
         horizontal_direita(mat,c_inicial,l_inicial,string,limite-1,i+1,c);
@@ -89,9 +89,9 @@ void horizontal_esquerda(char** mat, int c_inicial,int l_inicial,char const stri
     }
     if (string[i]!=mat[c_inicial-i][l_inicial]){
         return;
-    }else if(limite==2 && string[i]==mat[c_inicial+i][l_inicial]){
-        printf("Palavra %s ocorre na horizontal reversa, iniciando na\n"
-               "posicao [%d,%d] e terminando na posicao [%d,%d]\n",string,c_inicial+1,l_inicial+1,c_inicial-i+1,l_inicial+1);
+    }else if(limite==2 && string[i]==mat[c_inicial-i][l_inicial]){
+        printf("\nPalavra %s ocorre na horizontal reversa, iniciando na\n"
+               "posicao [%d,%d] e terminando na posicao [%d,%d]\n\n",string,c_inicial+1,l_inicial+1,c_inicial-i+1,l_inicial+1);
         return;
     }else{
         horizontal_esquerda(mat,c_inicial,l_inicial,string,limite-1,i+1);
@@ -103,9 +103,9 @@ void diagonal_cima_direita(char** mat, int c_inicial,int l_inicial,char const st
     }
     if (string[i]!=mat[c_inicial+i][l_inicial-i]){
         return;
-    }else if(limite==2 && string[i]==mat[c_inicial+i][l_inicial]){
-        printf("Palavra %s ocorre na diagonal secundaria direta, iniciando na\n"
-               "posicao [%d,%d] e terminando na posicao [%d,%d]\n",string,c_inicial+1,l_inicial+1,c_inicial+i+1,l_inicial-i+1);
+    }else if(limite==2 && string[i]==mat[c_inicial+i][l_inicial-i]){
+        printf("\nPalavra %s ocorre na diagonal secundaria direta, iniciando na\n"
+               "posicao [%d,%d] e terminando na posicao [%d,%d]\n\n",string,c_inicial+1,l_inicial+1,c_inicial+i+1,l_inicial-i+1);
         return;
     }else{
         diagonal_cima_direita(mat,c_inicial,l_inicial,string,limite-1,i+1,c);
@@ -117,9 +117,9 @@ void diagonal_baixo_direita(char** mat, int c_inicial,int l_inicial,char const s
     }
     if (string[i]!=mat[c_inicial+i][l_inicial+i]){
         return;
-    }else if(limite==2 && string[i]==mat[c_inicial+i][l_inicial]){
-        printf("Palavra %s ocorre na diagonal principal direta, iniciando na\n"
-               "posicao [%d,%d] e terminando na posicao [%d,%d]\n",string,c_inicial+1,l_inicial+1,c_inicial+i+1,l_inicial+i+1);
+    }else if(limite==2 && string[i]==mat[c_inicial+i][l_inicial+i]){
+        printf("\nPalavra %s ocorre na diagonal principal direta, iniciando na\n"
+               "posicao [%d,%d] e terminando na posicao [%d,%d]\n\n",string,c_inicial+1,l_inicial+1,c_inicial+i+1,l_inicial+i+1);
         return;
     }else{
         diagonal_baixo_direita(mat,c_inicial,l_inicial,string,limite-1,i+1,c,l);
@@ -131,9 +131,9 @@ void diagonal_cima_esquerda(char** mat, int c_inicial,int l_inicial,char const s
     }
     if (string[i]!=mat[c_inicial-i][l_inicial-i]){
         return;
-    }else if(limite==2 && string[i]==mat[c_inicial+i][l_inicial]){
-        printf("Palavra %s ocorre na horizontal secundaria reversa, iniciando na\n"
-               "posicao [%d,%d] e terminando na posicao [%d,%d]\n",string,c_inicial+1,l_inicial+1,c_inicial-i+1,l_inicial-i+1);
+    }else if(limite==2 && string[i]==mat[c_inicial-i][l_inicial-i]){
+        printf("\nPalavra %s ocorre na horizontal secundaria reversa, iniciando na\n"
+               "posicao [%d,%d] e terminando na posicao [%d,%d]\n\n",string,c_inicial+1,l_inicial+1,c_inicial-i+1,l_inicial-i+1);
         return;
     }else{
         diagonal_cima_esquerda(mat,c_inicial,l_inicial,string,limite-1,i+1);
@@ -145,9 +145,9 @@ void diagonal_baixo_esquerda(char** mat, int c_inicial,int l_inicial,char const 
     }
     if (string[i]!=mat[c_inicial-i][l_inicial+i]){
         return;
-    }else if (limite==2 && string[i]==mat[c_inicial+i][l_inicial]){
-        printf("Palavra %s ocorre na diagonal secundaria reversa, iniciando na\n"
-               "posicao [%d,%d] e terminando na posicao [%d,%d]\n",string,c_inicial+1,l_inicial+1,c_inicial-i+1,l_inicial+i+1);
+    }else if (limite==2 && string[i]==mat[c_inicial-i][l_inicial+i]){
+        printf("\nPalavra %s ocorre na diagonal secundaria reversa, iniciando na\n"
+               "posicao [%d,%d] e terminando na posicao [%d,%d]\n\n",string,c_inicial+1,l_inicial+1,c_inicial-i+1,l_inicial+i+1);
         return;
     }else{
         diagonal_baixo_esquerda(mat,c_inicial,l_inicial,string,limite-1,i+1,l);
@@ -159,9 +159,9 @@ void vertical_cima(char** mat, int c_inicial, int l_inicial, char const string[]
     }
     if (string[i]!=mat[c_inicial][l_inicial-i]){
         return;
-    }else if(limite==2 && string[i]==mat[c_inicial+i][l_inicial]){
-        printf("Palavra %s ocorre na vertical reversa, iniciando na\n"
-               "posicao [%d,%d] e terminando na posicao [%d,%d]\n",string,c_inicial+1,l_inicial+1,c_inicial+1,l_inicial-i+1);
+    }else if(limite==2 && string[i]==mat[c_inicial][l_inicial-i]){
+        printf("\nPalavra %s ocorre na vertical reversa, iniciando na\n"
+               "posicao [%d,%d] e terminando na posicao [%d,%d]\n\n",string,c_inicial+1,l_inicial+1,c_inicial+1,l_inicial-i+1);
         return;
     }else{
         vertical_cima(mat, c_inicial, l_inicial, string, limite - 1, i + 1);
@@ -173,15 +173,14 @@ void vertical_baixo(char** mat, int c_inicial, int l_inicial, char const string[
     }
     if (string[i]!=mat[c_inicial][l_inicial+i]){
         return;
-    }else if(limite==2 && string[i]==mat[c_inicial+i][l_inicial]){
-        printf("Palavra %s ocorre na vertical, iniciando na\n"
-               "posicao [%d,%d] e terminando na posicao [%d,%d]\n",string,c_inicial+1,l_inicial+1,c_inicial+1,l_inicial+i+1);
+    }else if(limite==2 && string[i]==mat[c_inicial][l_inicial+i]){
+        printf("\nPalavra %s ocorre na vertical, iniciando na\n"
+               "posicao [%d,%d] e terminando na posicao [%d,%d]\n\n",string,c_inicial+1,l_inicial+1,c_inicial+1,l_inicial+i+1);
         return;
     }else{
         vertical_baixo(mat, c_inicial, l_inicial, string, limite - 1, i + 1, l);
     }
 }
-
 
 void confere(char** mat, int c_inicial,int l_inicial,char const string[],int limite,int c,int l){
     horizontal_direita(mat,c_inicial,l_inicial,string,limite,1,c);
@@ -196,22 +195,26 @@ void confere(char** mat, int c_inicial,int l_inicial,char const string[],int lim
 
 
 void procura_matriz(char** mat,int c,int l){
-    printf("digite uma palavra para procurar no caca palavras:\n");
-    scanf(" ");
     char string[300];
-    fgets(string,sizeof(string),stdin);
-    int limite =(int)strlen(string);
-    for (int i = 0; i < l; ++i) {
-        for (int j = 0; j < c; ++j) {
-            if(string[0]==mat[j][i]){
-                if(limite==2){
-                    printf("Palavra %s ocorre na posicao [%d,%d]\n",string,j+1,i+1);
-                    continue;
-                }else{
-                    confere(mat,j,i,string,limite-1,c,l);
+    while (string[0]!='.') {
+        printf("digite uma palavra para procurar no caca palavras:\n");
+        printf("se deseja parar de procurar digite '.'\n");
+        scanf(" ");
+        fgets(string, sizeof(string), stdin);
+        int limite = (int) strlen(string);
+        for (int i = 0; i < l; ++i) {
+            for (int j = 0; j < c; ++j) {
+                if (string[0] == mat[j][i]) {
+                    if (limite == 2) {
+                        printf("Palavra %s ocorre na posicao [%d,%d]\n", string, j + 1, i + 1);
+                        continue;
+                    } else {
+                        confere(mat, j, i, string, limite - 1, c, l);
+                    }
                 }
             }
         }
+        print_mat(mat,c,l);
     }
 }
 
